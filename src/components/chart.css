@@ -1,0 +1,30 @@
+div.dc-chart {
+  float: none;
+  background-color: #b5bdc5;
+}
+
+.dc-chart g.row text,
+.dc-chart .pie-slice {
+  fill: black;
+}
+
+button.reset.btn.btn-sm {
+  font-size: 0.5em;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  cursor: pointer;
+}
+
+.dc-chart legend {
+  position: relative;
+  padding: 0 1rem;
+  border-bottom: 1px solid #4e5d6c;
+  color: #2b3e50;
+}
+
+.dc-chart legend .reset {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
