@@ -1,3 +1,16 @@
 circle[stroke-width="7"] {
   stroke-width: 2px;
 }
+
+div.jumbotron {
+  padding: 1rem 2rem;
+  margin-bottom: 0;
+}
+
+div.jumbotron > p {
+  margin: 1rem;
+}
+
+div.jumbotron > p:last-of-type {
+  margin-bottom: 0;
+}

@@ -13,6 +13,7 @@ export default function asyncComponent(importComponent) {
 
     async componentDidMount() {
       const { default: component } = await importComponent();
+      console.log("component", component);
       this.setState({
         component: component
       });

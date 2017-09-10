@@ -17,12 +17,12 @@ const Entry = props => {
         alignItems: "baseline"
       }}
     >
-      <Jumbotron style={{ padding: "1rem 2rem", marginBottom: 0 }}>
+      <Jumbotron>
         <h2>Welcome to my site</h2>
-        <p className="lead" style={{ margin: "1rem" }}>
+        <p className="lead">
           Apologies for how bare this site is at the moment.
         </p>
-        <p style={{ margin: "1rem" }}>
+        <p>
           I'm currently working on adding my old projects to here as well
           planning content for a personal blog and tutorials which will fill
           this space.

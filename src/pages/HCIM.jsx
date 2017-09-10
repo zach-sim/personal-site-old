@@ -45,9 +45,9 @@ export default class HCIM extends PureComponent {
     } else {
       return (
         <Container fluid>
-          <Jumbotron style={{ padding: "2rem", marginBottom: "1rem" }}>
+          <Jumbotron style={{ marginBottom: "1rem" }}>
             <h2>WIP: Explore Hardcore Ironman Deaths (from Runescape)</h2>
-            <p className="lead" style={{}}>
+            <p className="lead">
               The data this is based on is pulled from the spreadsheet{" "}
               <a
                 href="https://www.reddit.com/user/CaptainP"
@@ -58,7 +58,7 @@ export default class HCIM extends PureComponent {
               </a>{" "}
               provided on reddit after his own analyis of his scraped data.
             </p>
-            <p style={{ marginBottom: 0 }}>
+            <p>
               This includes over 10.5 thousand HCIM deaths from 18/11/2014 to
               2/09/2017.<br />
               If you're interested, you can view the reddit post and comments {}

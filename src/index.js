@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
-import { HCIM, MarkdownPage } from "./pages";
+import { HCIM, MarkdownPage, PageNotFound } from "./pages";
 import Entry from "./pages/Entry";
 
 import "bootswatch/superhero/bootstrap.css";
@@ -11,9 +11,12 @@ import "./index.css";
 const App = props => (
   <BrowserRouter>
     <Layout>
-      <Route path="/" exact component={Entry} />
-      <Route path="/vis/hcim" component={HCIM} />
-      <Route path="/test" component={MarkdownPage("test")} />
+      <Switch>
+        <Route path="/" exact component={Entry} />
+        <Route path="/vis/hcim" component={HCIM} />
+        <Route path="/projects/:name" component={MarkdownPage} />
+        <Route component={PageNotFound} />
+      </Switch>
     </Layout>
   </BrowserRouter>
 );
