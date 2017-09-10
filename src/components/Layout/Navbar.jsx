@@ -8,9 +8,9 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 
-const show_wip = true;
+const show_wip = false;
 
 export default class HeaderNav extends React.Component {
   constructor(props) {
@@ -35,7 +35,7 @@ export default class HeaderNav extends React.Component {
         style={{ marginBottom: "15px" }}
       >
         <NavbarToggler right onClick={this.toggle} />
-        <NavbarBrand tag={Link} to="/">
+        <NavbarBrand tag={Link} exact to="/">
           Zach Sim
         </NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
