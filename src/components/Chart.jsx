@@ -4,9 +4,6 @@ import { Col, Button } from "reactstrap";
 import PropTypes from "prop-types";
 import dc from "dc";
 
-import "dc/dc.css";
-import "./chart.css";
-
 export default class Chart extends PureComponent {
   constructor(props) {
     super(props);
