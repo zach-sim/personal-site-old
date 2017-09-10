@@ -7,6 +7,7 @@
     "bootswatch": "^4.0.0-alpha.6",
     "crossfilter2": "^1.4.1",
     "dc": "^2.1.8",
+    "expose-loader": "^0.7.3",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",

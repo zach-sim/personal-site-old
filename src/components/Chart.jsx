@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import { findDOMNode } from "react-dom";
 import { Col, Button } from "reactstrap";
 import PropTypes from "prop-types";
-import dc from "dc";
 
 export default class Chart extends PureComponent {
   constructor(props) {
@@ -39,7 +38,8 @@ export default class Chart extends PureComponent {
     });
     var group = dim.group();
 
-    var chart = dc[`${this.props.type}Chart`](findDOMNode(this.refs.el))
+    var chart = window.dc
+      [`${this.props.type}Chart`](findDOMNode(this.refs.el))
       .dimension(dim)
       .group(group);
 

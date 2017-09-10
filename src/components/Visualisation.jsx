@@ -1,7 +1,8 @@
+/* eslint import/no-webpack-loader-syntax: off */
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import crossfilter from "crossfilter2";
-import dc from "dc";
+import dc from "expose-loader?dc!dc";
 import Loading from "react-loading-animation";
 
 import "dc/dc.css";
