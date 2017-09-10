@@ -52,6 +52,11 @@ export default class HeaderNav extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink tag={Link} to="/projects/chemical-breakout">
+                  Chemical Breakout
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink tag={Link} to="/projects/test2">
                   Test2 MD
                 </NavLink>

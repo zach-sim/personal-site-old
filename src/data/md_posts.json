@@ -1,5 +1,10 @@
 {
   "test": {
-    "path": "projects/test1.md"
+    "path": "projects/test1.md",
+    "type": "project"
+  },
+  "chemical-breakout": {
+    "path": "projects/chemical_breakout.md",
+    "type": "project"
   }
 }

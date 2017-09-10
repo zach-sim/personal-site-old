@@ -14,7 +14,7 @@ const App = props => (
       <Switch>
         <Route path="/" exact component={Entry} />
         <Route path="/vis/hcim" component={HCIM} />
-        <Route path="/projects/:name" component={MarkdownPage} />
+        <Route path="/projects/:name" component={MarkdownPage("project")} />
         <Route component={PageNotFound} />
       </Switch>
     </Layout>
