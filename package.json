@@ -2,7 +2,7 @@
   "name": "personal-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://umbra268.github.io/",
+  "homepage": "https://umbra268.github.io/personal-site",
   "dependencies": {
     "bootswatch": "^4.0.0-alpha.6",
     "crossfilter2": "^1.4.1",

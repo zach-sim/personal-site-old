@@ -35,19 +35,22 @@ export default class HeaderNav extends React.Component {
         style={{ marginBottom: "15px" }}
       >
         <NavbarToggler right onClick={this.toggle} />
-        <NavbarBrand tag={Link} exact to="/">
+        <NavbarBrand tag={Link} exact to="/personal-site">
           Zach Sim
         </NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
           {show_wip && (
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink tag={Link} to="/vis/hcim">
+                <NavLink tag={Link} to="/personal-site/vis/hcim">
                   HCIM Vis
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/projects/chemical-breakout">
+                <NavLink
+                  tag={Link}
+                  to="/personal-site/projects/chemical-breakout"
+                >
                   Chemical Breakout
                 </NavLink>
               </NavItem>
