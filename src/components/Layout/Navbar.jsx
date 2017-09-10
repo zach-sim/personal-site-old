@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const show_wip = true;
+const show_wip = false;
 
 export default class HeaderNav extends React.Component {
   constructor(props) {
@@ -39,25 +39,25 @@ export default class HeaderNav extends React.Component {
           Zach Sim
         </NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            {show_wip && (
+          {show_wip && (
+            <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink tag={Link} to="/vis/hcim">
                   HCIM Vis
                 </NavLink>
               </NavItem>
-            )}
-            <NavItem>
-              <NavLink tag={Link} to="/projects/test">
-                Test MD
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/projects/test2">
-                Test2 MD
-              </NavLink>
-            </NavItem>
-          </Nav>
+              <NavItem>
+                <NavLink tag={Link} to="/projects/test">
+                  Test MD
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/projects/test2">
+                  Test2 MD
+                </NavLink>
+              </NavItem>
+            </Nav>
+          )}
         </Collapse>
       </Navbar>
     );
