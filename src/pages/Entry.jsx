@@ -3,8 +3,10 @@ import { Container, Jumbotron } from "reactstrap";
 
 const Entry = props => {
   const navEl = document.getElementsByTagName("nav")[0];
-  let navHeight = 0;
+  let navHeight = 46 + 15; // Default height of navbar.
   if (navEl) {
+    // The nav element doesn't exist when this is being rendered
+    // TODO: fix this
     navHeight = navEl.offsetHeight + 15;
   }
   return (
@@ -12,10 +14,10 @@ const Entry = props => {
       style={{
         height: `calc(100vh - ${navHeight}px)`,
         display: "flex",
-        alignItems: "center"
+        alignItems: "baseline"
       }}
     >
-      <Jumbotron style={{ padding: "1rem 2rem" }}>
+      <Jumbotron style={{ padding: "1rem 2rem", marginBottom: 0 }}>
         <h2>Welcome to my site</h2>
         <p className="lead" style={{ margin: "1rem" }}>
           Apologies for how bare this site is at the moment.

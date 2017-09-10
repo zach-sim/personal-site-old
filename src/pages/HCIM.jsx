@@ -41,7 +41,7 @@ export default class HCIM extends PureComponent {
 
   render() {
     if (this.state.loading) {
-      return <Loading width="300" height="300" />;
+      return <Loading width="300px" height="300px" />;
     } else {
       return (
         <Container fluid>
@@ -49,14 +49,24 @@ export default class HCIM extends PureComponent {
             <h2>WIP: Explore Hardcore Ironman Deaths (from Runescape)</h2>
             <p className="lead" style={{}}>
               The data this is based on is pulled from the spreadsheet{" "}
-              <a href="https://www.reddit.com/user/CaptainP">CaptainP</a>{" "}
+              <a
+                href="https://www.reddit.com/user/CaptainP"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CaptainP
+              </a>{" "}
               provided on reddit after his own analyis of his scraped data.
             </p>
             <p style={{ marginBottom: 0 }}>
               This includes over 10.5 thousand HCIM deaths from 18/11/2014 to
               2/09/2017.<br />
               If you're interested, you can view the reddit post and comments {}
-              <a href="https://www.reddit.com/r/runescape/comments/6y0oit/i_used_an_html_parser_to_pull_all_105k_hcim/">
+              <a
+                href="https://www.reddit.com/r/runescape/comments/6y0oit/i_used_an_html_parser_to_pull_all_105k_hcim/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 here
               </a>.
             </p>

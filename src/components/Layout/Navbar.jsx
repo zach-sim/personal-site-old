@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const show_wip = false;
+const show_wip = true;
 
 export default class HeaderNav extends React.Component {
   constructor(props) {
@@ -47,6 +47,11 @@ export default class HeaderNav extends React.Component {
                 </NavLink>
               </NavItem>
             )}
+            <NavItem>
+              <NavLink tag={Link} to="/test">
+                Test MD
+              </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
