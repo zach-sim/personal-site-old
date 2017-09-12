@@ -4,8 +4,8 @@ import PageNotFound from "./404";
 
 export const HCIM = asyncComponent(() =>
   visualisationLoader(
-    () => import("../data/rs_hcim.json"),
-    () => import("./vis/HCIM")
+    () => import(/* webpackChunkName: 'rs_hcim_data' */ "../data/rs_hcim.json"),
+    () => import(/* webpackChunkName: 'rs_hcim_vis' */ "./vis/HCIM")
   )
 );
 export const MarkdownPage = type => props => {
