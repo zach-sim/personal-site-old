@@ -2,5 +2,13 @@
   "chemical-breakout": {
     "path": "projects/chemical_breakout.md",
     "type": "project"
+  },
+  "abalone-x": {
+    "path": "projects/abalone_x.md",
+    "type": "project"
+  },
+  "sliders": {
+    "path": "projects/sliders.md",
+    "type": "project"
   }
 }
