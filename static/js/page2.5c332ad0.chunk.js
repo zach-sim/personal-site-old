@@ -1,0 +1,2 @@
+webpackJsonp([2],{267:function(i,e){i.exports={attributes:{title:"Sliders"},body:"<h2>Sliders</h2>\n<p>WIP: This will later give you a quick overview of design decisions I took and give you links to download this project</p>\n",frontmatter:"title: Sliders",content:"---\r\ntitle: Sliders\r\n---\r\n\r\n## Sliders\r\n\r\nWIP: This will later give you a quick overview of design decisions I took and give you links to download this project\r\n"}}});
+//# sourceMappingURL=page2.5c332ad0.chunk.js.map
