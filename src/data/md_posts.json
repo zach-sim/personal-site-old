@@ -1,14 +1,17 @@
 {
   "chemical-breakout": {
     "path": "projects/chemical_breakout.md",
-    "type": "project"
+    "type": "project",
+    "title": "Chemical Breakout"
   },
   "abalone-x": {
     "path": "projects/abalone_x.md",
-    "type": "project"
+    "type": "project",
+    "title": "AbaloneX"
   },
   "sliders": {
     "path": "projects/sliders.md",
-    "type": "project"
+    "type": "project",
+    "title": "Sliders"
   }
 }
