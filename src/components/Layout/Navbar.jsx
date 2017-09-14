@@ -9,8 +9,7 @@ import {
   NavLink
 } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
-import { path_prefix } from "../../index.js";
-const show_wip = false;
+import { path_prefix, show_wip } from "../../config";
 
 export default class HeaderNav extends React.Component {
   constructor(props) {

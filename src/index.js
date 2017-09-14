@@ -4,12 +4,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import { HCIM, MarkdownPage, PageNotFound } from "./pages";
 import Entry from "./pages/Entry";
+import { path_prefix } from "./config";
 
 import "bootswatch/superhero/bootstrap.css";
 import "./index.css";
-
-export const path_prefix =
-  process.env.NODE_ENV === "development" ? "" : "/personal-site";
 
 const App = props => (
   <BrowserRouter>
