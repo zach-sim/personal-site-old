@@ -1,5 +1,7 @@
 ---
 title: Sliders
+url: sliders
+wip: true
 ---
 
 ## Sliders

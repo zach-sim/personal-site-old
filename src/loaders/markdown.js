@@ -34,8 +34,6 @@ var md = markdownIt({
 module.exports = function(content) {
   this.cacheable();
   const meta = frontMatter(content);
-  meta.body = md.render(meta.body);
-  meta.content = content;
-  delete meta.frontMatter;
-  return `module.exports = ${JSON.stringify(meta)}`;
+  const body = md.render(meta.body);
+  return `module.exports = ${JSON.stringify(body)}`;
 };

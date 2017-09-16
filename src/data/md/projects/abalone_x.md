@@ -1,5 +1,8 @@
 ---
 title: AbaloneX
+url: abalone-x
+wip: true
+date: 2015-09
 ---
 
 ## Abalone X
