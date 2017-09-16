@@ -1,2 +1,0 @@
-webpackJsonp([4],{265:function(o,n){o.exports={attributes:{title:"AbaloneX"},body:"<h2>Abalone X</h2>\n<p>WIP: This will later give you a quick overview of design decisions I took and give you links to download this project</p>\n",frontmatter:"title: AbaloneX",content:"---\r\ntitle: AbaloneX\r\n---\r\n\r\n## Abalone X\r\n\r\nWIP: This will later give you a quick overview of design decisions I took and give you links to download this project\r\n"}}});
-//# sourceMappingURL=page0.bc8d1c53.chunk.js.map

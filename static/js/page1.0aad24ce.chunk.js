@@ -1,2 +1,0 @@
-webpackJsonp([3],{266:function(e,o){e.exports={attributes:{title:"Chemical Breakout"},body:"<h2>Chemical Breakout</h2>\n<p>WIP: This will later give you a quick overview of design decisions I took and give you links to download this project</p>\n",frontmatter:"title: Chemical Breakout",content:"---\r\ntitle: Chemical Breakout\r\n---\r\n\r\n## Chemical Breakout\r\n\r\nWIP: This will later give you a quick overview of design decisions I took and give you links to download this project\r\n"}}});
-//# sourceMappingURL=page1.0aad24ce.chunk.js.map
