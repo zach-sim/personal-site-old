@@ -20,7 +20,9 @@ const Entry = props => {
     <Container>
       <Row>
         {Object.entries(md_posts)
-          .filter(([_, { wip }]) => show_wip || !wip)
+          .filter(
+            ([_, { wip, type }]) => (show_wip || !wip) && type === "project"
+          )
           .map(([key, md_post]) => (
             <Col key={key}>
               <Card inverse>

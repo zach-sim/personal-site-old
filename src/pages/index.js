@@ -2,7 +2,9 @@ import React from "react";
 import { asyncComponent, markdownLoader, visualisationLoader } from "../utils";
 import PageNotFound from "./404";
 
-export const Projects = asyncComponent(() => import("./Projects"));
+export const Projects = asyncComponent(() =>
+  import(/* webpackChunkName: 'projects' */ "./Projects")
+);
 export const HCIM = asyncComponent(() =>
   visualisationLoader(
     () => import(/* webpackChunkName: 'rs_hcim_data' */ "../data/rs_hcim.json"),
