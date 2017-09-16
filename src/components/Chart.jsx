@@ -38,8 +38,9 @@ export default class Chart extends PureComponent {
     });
     var group = dim.group();
 
-    var chart = window.dc
-      [`${this.props.type}Chart`](findDOMNode(this.refs.el))
+    const chartFunc = window.dc[`${this.props.type}Chart`];
+
+    var chart = chartFunc(findDOMNode(this.refs.el))
       .dimension(dim)
       .group(group);
 
