@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.9c046b0c.css",
   "main.css.map": "static/css/main.9c046b0c.css.map",
-  "main.js": "static/js/main.02e88ce1.js",
-  "main.js.map": "static/js/main.02e88ce1.js.map",
+  "main.js": "static/js/main.a9634b1a.js",
+  "main.js.map": "static/js/main.a9634b1a.js.map",
   "markdown_page.js": "static/js/markdown_page.0348a84b.chunk.js",
   "markdown_page.js.map": "static/js/markdown_page.0348a84b.chunk.js.map",
   "page0.js": "static/js/page0.613f6532.chunk.js",
@@ -11,12 +11,12 @@
   "page1.js.map": "static/js/page1.05a3c277.chunk.js.map",
   "page2.js": "static/js/page2.44fad30c.chunk.js",
   "page2.js.map": "static/js/page2.44fad30c.chunk.js.map",
+  "projects.js": "static/js/projects.bf7ee441.chunk.js",
+  "projects.js.map": "static/js/projects.bf7ee441.chunk.js.map",
   "rs_hcim_data.js": "static/js/rs_hcim_data.4f283d76.chunk.js",
   "rs_hcim_data.js.map": "static/js/rs_hcim_data.4f283d76.chunk.js.map",
   "rs_hcim_vis.js": "static/js/rs_hcim_vis.f3ac6b85.chunk.js",
   "rs_hcim_vis.js.map": "static/js/rs_hcim_vis.f3ac6b85.chunk.js.map",
-  "static/js/6.19f7c23b.chunk.js": "static/js/6.19f7c23b.chunk.js",
-  "static/js/6.19f7c23b.chunk.js.map": "static/js/6.19f7c23b.chunk.js.map",
   "visualisation.js": "static/js/visualisation.40e0977c.chunk.js",
   "visualisation.js.map": "static/js/visualisation.40e0977c.chunk.js.map"
 }
