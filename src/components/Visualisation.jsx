@@ -36,6 +36,7 @@ const Vis = (data, Charts) =>
 
     componentWillUnmount() {
       window.removeEventListener('resize', this.resize);
+      dc.chartRegistry.clear();
     }
 
     resize() {
