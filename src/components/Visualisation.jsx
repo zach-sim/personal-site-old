@@ -1,41 +1,41 @@
-/* eslint import/no-webpack-loader-syntax: off */
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import crossfilter from "crossfilter2";
-import dc from "expose-loader?dc!dc";
-import Loading from "react-loading-animation";
+/* eslint class-methods-use-this: off */
+/* eslint react/no-did-mount-set-state: off */
 
-import "dc/dc.css";
-import "./chart.css";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import crossfilter from 'crossfilter2';
+import dc from 'expose-loader?dc!dc'; // eslint-disable-line
+import Loading from 'react-loading-animation';
 
-const Vis = (data, Charts) => {
-  return class Visualisation extends PureComponent {
+import 'dc/dc.css';
+import './chart.css';
+
+const Vis = (data, Charts) =>
+  class Visualisation extends PureComponent {
+    static childContextTypes = {
+      ndx: PropTypes.object.isRequired,
+    };
     constructor() {
       super();
 
       this.state = { loading: true };
       this.ndx = {};
-      this.resize = this.resize.bind(this);
-    }
-
-    static childContextTypes = {
-      ndx: PropTypes.object.isRequired
-    };
-
-    componentDidMount() {
-      console.time("ndx");
-      this.ndx = crossfilter(data);
-      console.timeEnd("ndx");
-      this.setState({ loading: false });
-      window.addEventListener("resize", this.resize);
-    }
-
-    componentWillUnmount() {
-      window.removeEventListener("resize", this.resize);
     }
 
     getChildContext() {
       return { ndx: this.ndx };
+    }
+
+    componentDidMount() {
+      console.time('ndx');
+      this.ndx = crossfilter(data);
+      console.timeEnd('ndx');
+      this.setState({ loading: false });
+      window.addEventListener('resize', this.resize);
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener('resize', this.resize);
     }
 
     resize() {
@@ -48,11 +48,9 @@ const Vis = (data, Charts) => {
     render() {
       if (this.state.loading) {
         return <Loading width="300px" height="300px" />;
-      } else {
-        return <Charts />;
       }
+      return <Charts />;
     }
   };
-};
 
 export default Vis;

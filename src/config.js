@@ -1,6 +1,4 @@
-export const path_prefix =
-  process.env.NODE_ENV === "development" ? "" : "/personal-site";
+export const pathPrefix = process.env.NODE_ENV === 'development' ? '' : '/personal-site';
 
-export const show_wip =
-  window.location.search.indexOf("show_wip") !== -1 ||
-  process.env.NODE_ENV === "development";
+export const showWip =
+  window.location.search.indexOf('showWip') !== -1 || process.env.NODE_ENV === 'development';

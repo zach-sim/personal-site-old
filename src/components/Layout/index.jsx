@@ -1,5 +1,6 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Navbar from './Navbar';
 
 const Layout = props => (
   <div>
@@ -7,5 +8,7 @@ const Layout = props => (
     {props.children}
   </div>
 );
-
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+};
 export default Layout;

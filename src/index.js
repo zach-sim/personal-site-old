@@ -1,34 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Layout from "./components/Layout";
-import { HCIM, MarkdownPage, Projects, PageNotFound } from "./pages";
-import Entry from "./pages/Entry";
-import { path_prefix } from "./config";
+/* eslint react/jsx-filename-extension: off */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import 'bootswatch/superhero/bootstrap.css';
+import Layout from './components/Layout';
+import { HCIM, MarkdownPage, Projects, PageNotFound } from './pages';
+import Entry from './pages/Entry';
+import { pathPrefix } from './config';
+import './index.css';
 
-import "bootswatch/superhero/bootstrap.css";
-import "./index.css";
-
-const App = props => (
+const App = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route path={`${path_prefix}/`} exact component={Entry} />
-        <Route path={`${path_prefix}/vis/hcim`} component={HCIM} />
-        <Route
-          path={`${path_prefix}/projects/:name`}
-          component={MarkdownPage("project")}
-        />
-        <Route path={`${path_prefix}/projects`} exact component={Projects} />
+        <Route path={`${pathPrefix}/`} exact component={Entry} />
+        <Route path={`${pathPrefix}/vis/hcim`} component={HCIM} />
+        <Route path={`${pathPrefix}/projects/:name`} component={MarkdownPage('project')} />
+        <Route path={`${pathPrefix}/projects`} exact component={Projects} />
         <Route component={PageNotFound} />
       </Switch>
     </Layout>
   </BrowserRouter>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
 if (module.hot) {
   module.hot.accept(App, () => {
-    ReactDOM.render(<App />, document.getElementById("root"));
+    ReactDOM.render(<App />, document.getElementById('root'));
   });
 }

@@ -1,46 +1,52 @@
-import React, { PureComponent } from "react";
-import { findDOMNode } from "react-dom";
-import { Col, Button } from "reactstrap";
-import PropTypes from "prop-types";
+/* eslint react/forbid-prop-types: 0 */
+/* eslint react/no-find-dom-node: 0 */
+/* eslint react/no-string-refs: 0 */
+
+import React, { PureComponent } from 'react';
+import { findDOMNode } from 'react-dom';
+import { Col, Button } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 export default class Chart extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.reset = this.reset.bind(this);
-  }
-  static contextTypes = {
-    ndx: PropTypes.object.isRequired
-  };
-
-  static defaultProps = {
-    type: "row",
-    nullValue: "",
-    legend: true
-  };
-
   static propTypes = {
     type: PropTypes.string,
     nullValue: PropTypes.string,
     legend: PropTypes.bool,
     field: PropTypes.string.isRequired,
     chartOptions: PropTypes.object,
-    wrapperProps: PropTypes.object
+    wrapperProps: PropTypes.object,
+  };
+  static defaultProps = {
+    type: 'row',
+    nullValue: '',
+    legend: true,
+    chartOptions: {},
+    wrapperProps: {},
+  };
+  static contextTypes = {
+    ndx: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.reset = this.reset.bind(this);
+  }
+
   componentDidMount() {
-    var dim = this.context.ndx.dimension(d => {
-      let output = d[this.props.field];
+    const dim = this.context.ndx.dimension((d) => {
+      const output = d[this.props.field];
 
       if (output === null || output.length === 0) {
         return this.props.nullValue;
-      } else return output;
+      }
+      return output;
     });
-    var group = dim.group();
+    const group = dim.group();
 
     const chartFunc = window.dc[`${this.props.type}Chart`];
 
-    var chart = chartFunc(findDOMNode(this.refs.el))
+    const chart = chartFunc(findDOMNode(this.refs.el))
       .dimension(dim)
       .group(group);
 
@@ -63,13 +69,8 @@ export default class Chart extends PureComponent {
         <div ref="el">
           {legend && (
             <legend>
-              {field}{" "}
-              <Button
-                size="sm"
-                onClick={this.reset}
-                className="reset"
-                style={{ display: "none" }}
-              >
+              {field}{' '}
+              <Button size="sm" onClick={this.reset} className="reset" style={{ display: 'none' }}>
                 reset
               </Button>
             </legend>

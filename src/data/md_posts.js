@@ -1,37 +1,37 @@
-var fs = require("fs");
-var frontMatter = require("front-matter");
+const fs = require('fs');
+const frontMatter = require('front-matter');
 
-var walk = function(dir) {
-  var results = [];
-  var list = fs.readdirSync(dir);
-  list.forEach(function(file) {
-    file = dir + "/" + file;
-    var stat = fs.statSync(file);
-    if (stat && stat.isDirectory()) results = results.concat(walk(file));
-    else results.push(file);
+const walk = (dir) => {
+  let results = [];
+  const list = fs.readdirSync(dir);
+  list.forEach((file) => {
+    const filePath = `${dir}/${file}`;
+    const stat = fs.statSync(filePath);
+    if (stat && stat.isDirectory()) results = results.concat(walk(filePath));
+    else results.push(filePath);
   });
   return results;
 };
 
-function process_mds() {
-  const files = walk("./src/data/md");
-  var output = {};
-  files.forEach(file => {
-    var source = fs.readFileSync(file).toString();
-    var fm = frontMatter(source);
+function processMds() {
+  const files = walk('./src/data/md');
+  const output = {};
+  files.forEach((file) => {
+    const source = fs.readFileSync(file).toString();
+    const fm = frontMatter(source);
     fm.attributes.path = file
-      .split("/")
+      .split('/')
       .slice(4)
-      .join("/");
-    fm.attributes.type = fm.attributes.path.split("s/")[0];
+      .join('/');
+    fm.attributes.type = fm.attributes.path.split('s/')[0];
     output[fm.attributes.url] = fm.attributes;
     delete output[fm.attributes.url].url;
   });
   return {
     code: `module.exports = ${JSON.stringify(output)};`,
     cacheable: true,
-    dependencies: files
+    dependencies: files,
   };
 }
 
-module.exports = process_mds;
+module.exports = processMds;
