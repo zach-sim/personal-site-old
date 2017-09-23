@@ -28,10 +28,10 @@
     "val-loader": "^1.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "build":
-      "react-scripts build && cp-cli build/index.html build/404.html && rm-cli build/service-worker.js",
-    "test": "react-scripts test --env=jsdom",
+      "react-app-rewired build && cp-cli build/index.html build/404.html && rm-cli build/service-worker.js",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -47,6 +47,7 @@
     "gh-pages": "^1.0.0",
     "prettier-eslint": "^8.0.0",
     "raw-loader": "^0.5.1",
+    "react-app-rewired": "^1.2.9",
     "react-scripts": "1.0.13",
     "rm-cli": "^1.2.1"
   }
