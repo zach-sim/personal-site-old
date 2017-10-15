@@ -9,12 +9,14 @@ import PropTypes from 'prop-types';
 
 export default class Chart extends PureComponent {
   static propTypes = {
-    type: PropTypes.string,
     nullValue: PropTypes.string,
     legend: PropTypes.bool,
     field: PropTypes.string.isRequired,
     chartOptions: PropTypes.object,
     wrapperProps: PropTypes.object,
+    fieldFn: PropTypes.func,
+    on: PropTypes.object,
+    type: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   };
   static defaultProps = {
     type: 'row',
@@ -22,6 +24,8 @@ export default class Chart extends PureComponent {
     legend: true,
     chartOptions: {},
     wrapperProps: {},
+    fieldFn: null,
+    on: {},
   };
   static contextTypes = {
     ndx: PropTypes.object.isRequired,
@@ -35,6 +39,8 @@ export default class Chart extends PureComponent {
 
   componentDidMount() {
     const dim = this.context.ndx.dimension((d) => {
+      if (this.props.fieldFn) return this.props.fieldFn(d);
+
       const output = d[this.props.field];
 
       if (output === null || output.length === 0) {
@@ -44,7 +50,10 @@ export default class Chart extends PureComponent {
     });
     const group = dim.group();
 
-    const chartFunc = window.dc[`${this.props.type}Chart`];
+    let chartFunc;
+
+    if (typeof (this.props.type) === 'string') chartFunc = window.dc[`${this.props.type}Chart`];
+    if (typeof (this.props.type) === 'function') chartFunc = this.props.type;
 
     const chart = chartFunc(findDOMNode(this.refs.el))
       .dimension(dim)
@@ -53,6 +62,7 @@ export default class Chart extends PureComponent {
     if (this.props.chartOptions) {
       chart.options(this.props.chartOptions);
     }
+    Object.keys(this.props.on).forEach(event => chart.on(event, this.props.on[event]));
 
     chart.render();
     this.chart = chart;

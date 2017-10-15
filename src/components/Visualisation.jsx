@@ -28,6 +28,7 @@ const Vis = (data, Charts) =>
 
     componentDidMount() {
       console.time('ndx');
+      window._data = data;
       this.ndx = crossfilter(data);
       console.timeEnd('ndx');
       this.setState({ loading: false });
