@@ -60,7 +60,7 @@ export default class Chart extends PureComponent {
       .group(group);
 
     if (this.props.chartOptions) {
-      chart.options(this.props.chartOptions);
+      chart.options({ elasticX: true, elasticY: true }).options(this.props.chartOptions);
     }
     Object.keys(this.props.on).forEach(event => chart.on(event, this.props.on[event]));
 
