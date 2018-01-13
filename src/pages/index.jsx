@@ -6,6 +6,9 @@ import PageNotFound from './404';
 export const Projects = asyncComponent(() =>
   import(/* webpackChunkName: 'projects' */ './Projects'),
 );
+export const Blogs = asyncComponent(() =>
+  import(/* webpackChunkName: 'projects' */ './Blogs'),
+);
 
 export const HCIM = asyncComponent(() =>
   visualisationLoader(

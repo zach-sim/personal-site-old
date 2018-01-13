@@ -37,6 +37,11 @@ export default class HeaderNav extends React.Component {
                   Projects
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to={`${pathPrefix}/blogs/`}>
+                  Blogs
+                </NavLink>
+              </NavItem>
             </Nav>
           )}
         </Collapse>
