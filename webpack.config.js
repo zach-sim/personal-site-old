@@ -1,11 +1,15 @@
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const dev = process.env.NODE_ENV === 'development' || process.env.WEBPACK_SERVE !== undefined;
+
 module.exports = {
-  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
+  mode: dev ? 'development' : 'production',
   entry: './src/index.js',
   output: {
-    path: __dirname + '/dist'
+    path: __dirname + '/build',
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -16,11 +20,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.json$/,
+        use: 'compress-json-loader'
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.json.gz$/,
+        use: ['compress-json-loader', 'gzip-loader']
       },
       {
         test: /\.css$/,
@@ -30,6 +44,13 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin(),
+    new webpack.DefinePlugin({
+      PATH_PREFIX: JSON.stringify(''),
+      DEVELOPMENT: JSON.stringify(dev)
+    }),
     new HtmlWebpackPlugin({title: 'Zach Sim'}),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 }

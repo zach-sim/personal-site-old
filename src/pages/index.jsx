@@ -12,7 +12,7 @@ export const Blogs = asyncComponent(() =>
 
 export const HCIM = asyncComponent(() =>
   visualisationLoader(
-    () => import(/* webpackChunkName: 'rs_hcim_data' */ '../data/rs_hcim.json'),
+    () => import(/* webpackChunkName: 'rs_hcim_data' */ '../data/rs_hcim.json.gz'),
     () => import(/* webpackChunkName: 'rs_hcim_vis' */ './vis/HCIM'),
   ),
 );

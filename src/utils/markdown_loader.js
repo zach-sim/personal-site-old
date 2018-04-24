@@ -7,7 +7,7 @@ export default async function markdownLoader(page, type) {
 
     const md = {
       ...mdPosts[page],
-      body: await import(/* webpackChunkName: 'page' */ `!!../loaders/markdown!../data/md/${path}`),
+      body: (await import(/* webpackChunkName: 'page' */ `!!../loaders/markdown!../data/md/${path}`)).default,
     };
     delete md.path;
 
