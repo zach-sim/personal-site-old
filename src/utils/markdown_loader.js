@@ -3,7 +3,7 @@ import PageNotFound from '../pages/404';
 
 export default async function markdownLoader(page, type) {
   if (mdPosts[page] && mdPosts[page].type === type) {
-    const path = mdPosts[page].path;
+    const { path } = mdPosts[page];
 
     const md = {
       ...mdPosts[page],

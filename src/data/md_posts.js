@@ -23,7 +23,7 @@ function processMds() {
       .split('/')
       .slice(4)
       .join('/');
-    fm.attributes.type = fm.attributes.path.split('s/')[0];
+    [fm.attributes.type] = fm.attributes.path.split('s/');
     output[fm.attributes.url] = fm.attributes;
     delete output[fm.attributes.url].url;
   });

@@ -1,3 +1,5 @@
+/* global PATH_PREFIX:false, DEVELOPMENT:false */
+
 export const pathPrefix = PATH_PREFIX;
 
 export const showWip =

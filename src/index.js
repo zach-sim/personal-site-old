@@ -1,4 +1,4 @@
-// /* eslint react/jsx-filename-extension: off */
+/* eslint react/jsx-filename-extension: off */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -25,7 +25,7 @@ const App = () => (
   </BrowserRouter>
 );
 
-if(document.getElementById('root') === null) {
+if (document.getElementById('root') === null) {
   const div = document.createElement('div');
   div.id = 'root';
   document.body.append(div);

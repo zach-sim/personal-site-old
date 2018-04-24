@@ -1,4 +1,4 @@
-const pieChart = require('dc').pieChart;
+import { pieChart } from 'dc';
 
 module.exports = () => {
   const func = pieChart.toString().split('return labelPosition(d, arc)');
