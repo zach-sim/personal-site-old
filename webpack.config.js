@@ -29,12 +29,12 @@ module.exports = {
       {
         type: 'javascript/auto',
         test: /\.json$/,
-        use: 'compress-json-loader'
+        use: './loaders/jsonc'
       },
       {
         type: 'javascript/auto',
         test: /\.json.gz$/,
-        use: ['compress-json-loader', 'gzip-loader']
+        use: ['./loaders/jsonc', 'gzip-loader']
       },
       {
         test: /\.css$/,
