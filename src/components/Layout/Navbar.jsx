@@ -19,8 +19,8 @@ export default class HeaderNav extends React.Component {
   }
   render() {
     return (
-      <Navbar color="primary" inverse toggleable style={{ marginBottom: '15px' }}>
-        <NavbarToggler right onClick={this.toggle} />
+      <Navbar color="dark" dark expand style={{ marginBottom: '15px' }}>
+        <NavbarToggler onClick={this.toggle} />
         <NavbarBrand tag={Link} exact to={`${pathPrefix}/`}>
           Zach Sim
         </NavbarBrand>

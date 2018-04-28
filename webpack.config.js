@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const dev = process.env.NODE_ENV === 'development' || process.env.WEBPACK_SERVE !== undefined;
 
@@ -29,12 +30,16 @@ module.exports = {
       {
         type: 'javascript/auto',
         test: /\.json$/,
-        use: './loaders/jsonc'
+        use: './loaders/json'
       },
       {
         type: 'javascript/auto',
         test: /\.json.gz$/,
-        use: ['./loaders/jsonc', 'gzip-loader']
+        use: ['./loaders/json', 'gzip-loader']
+      },
+      {
+        test: /\.md$/,
+        use: './loaders/markdown'
       },
       {
         test: /\.css$/,
@@ -48,7 +53,12 @@ module.exports = {
       PATH_PREFIX: JSON.stringify(''),
       DEVELOPMENT: JSON.stringify(dev)
     }),
-    new HtmlWebpackPlugin({title: 'Zach Sim'}),
+    new HtmlWebpackPlugin({ title: 'Zach Sim' }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static',
+    //   openAnalyzer: false,
+    //   generateStatsFile: true,
+    // }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

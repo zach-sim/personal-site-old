@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Jumbotron, Row } from 'reactstrap';
 import Chart from '../../components/Chart';
-import pie from 'val-loader!../../utils/improved_pie_chart'; // eslint-disable-line
+// import pie from 'val-loader!../../utils/improved_pie_chart'; // eslint-disable-line
 
 const HCIM = () => (
   <Container fluid>
@@ -43,7 +43,7 @@ const HCIM = () => (
           return 3;
         }}
         nullValue="Unknown"
-        type={pie}
+        type="pie"
         chartOptions={{
           cap: 10,
           height: 400,

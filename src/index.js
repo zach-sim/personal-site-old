@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import 'bootswatch/superhero/bootstrap.css';
+import 'bootswatch/dist/superhero/bootstrap.css';
 import Layout from './components/Layout';
 import { HCIM, MarkdownPage, Projects, Blogs, PageNotFound } from './pages';
 import Entry from './pages/Entry';
