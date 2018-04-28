@@ -19,7 +19,6 @@
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-sub": "^1.0.0",
-    "msgpack-lite": "^0.1.26",
     "pako": "^1.0.6",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
@@ -32,8 +31,8 @@
     "val-loader": "^1.1.0"
   },
   "scripts": {
-    "start": "webpack-serve --open --no-clipboard",
-    "build": "webpack",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production",
     "lint": "eslint /src",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -61,6 +60,6 @@
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.15",
-    "webpack-serve": "^0.3.1"
+    "webpack-dev-server": "^3.1.3"
   }
 }
