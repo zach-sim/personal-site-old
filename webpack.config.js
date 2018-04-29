@@ -16,6 +16,9 @@ module.exports = (env, argv) => {
         automaticNameDelimiter: '.'
       }
     },
+    devServer: {
+      historyApiFallback: true,
+    },
     module: {
       rules: [
         {
