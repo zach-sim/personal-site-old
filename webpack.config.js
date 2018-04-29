@@ -30,11 +30,6 @@ module.exports = (env, argv) => {
         },
         {
           type: 'javascript/auto',
-          test: /\.json$/,
-          use: './loaders/json'
-        },
-        {
-          type: 'javascript/auto',
           test: /\.json.gz$/,
           use: ['./loaders/json', 'gzip-loader']
         },
