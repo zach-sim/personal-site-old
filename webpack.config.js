@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = (env, argv) => {
+  const devMode = argv.mode === 'development';
   return ({
     entry: './src/index.js',
     output: {
@@ -39,7 +40,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
-          use: ['cache-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+          use: [devMode ? 'style-loader' : MiniCssExtractPlugin.loader, 'cache-loader', 'css-loader', 'postcss-loader']
         },
       ]
     },
@@ -47,7 +48,7 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin(),
       new webpack.DefinePlugin({
         PATH_PREFIX: JSON.stringify(''),
-        DEVELOPMENT: JSON.stringify(argv.mode === 'development')
+        DEVELOPMENT: JSON.stringify(devMode)
       }),
       new HtmlWebpackPlugin({ title: 'Zach Sim' }),
       new BundleAnalyzerPlugin({
