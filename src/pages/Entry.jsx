@@ -3,7 +3,7 @@ import { Container, Jumbotron } from 'reactstrap';
 
 const Entry = () => {
   const navEl = document.getElementsByTagName('nav')[0];
-  let navHeight = 46 + 15; // Default height of navbar.
+  let navHeight = 48 + 15; // Default height of navbar.
   if (navEl) {
     // The nav element doesn't exist when this is being rendered
     // TODO: fix this

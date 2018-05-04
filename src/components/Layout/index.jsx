@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Navbar from './Navbar';
 
 const Layout = props => (
-  <div>
+  <Fragment>
     <Navbar />
     {props.children}
-  </div>
+  </Fragment>
 );
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,

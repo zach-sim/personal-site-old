@@ -57,6 +57,19 @@ const HCIM = () => (
           },
           ordering: d => d.key,
         }}
+        on={{
+          // 'renderlet.angle': (chart) => { // transition looks odd
+          //   chart
+          //     .selectAll('text.pie-slice')
+          //     .attr('transform', function addRotation(d) {
+          //         const translate = this.getAttribute('transform').split(' r')[0];
+          //         console.log(translate);
+          //         let ang = ((d.startAngle + d.endAngle) / 2 * 180 / Math.PI)%360;
+          //         if (ang < 180) ang -= 90; else ang += 90;
+          //         return `${translate} rotate(${ang})`;
+          //     });
+          // }
+        }}
       />
     </Row>
   </Container>
