@@ -25,21 +25,21 @@ module.exports = (env, argv) => {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader"
+            loader: 'babel-loader?cacheDirectory'
           }
         },
         {
           type: 'javascript/auto',
           test: /\.json.gz$/,
-          use: ['./loaders/json', 'gzip-loader']
+          use: ['cache-loader', './loaders/json', 'gzip-loader']
         },
         {
           test: /\.md$/,
-          use: './loaders/markdown'
+          use: ['cache-loader', './loaders/markdown']
         },
         {
           test: /\.css$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+          use: ['cache-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
         },
       ]
     },
