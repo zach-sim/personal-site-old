@@ -60,7 +60,7 @@
     "postcss-loader": "^2.1.4",
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
-    "webpack-cli": "^2.0.15",
+    "webpack-cli": "^2.1.2",
     "webpack-dev-server": "^3.1.3"
   }
 }
